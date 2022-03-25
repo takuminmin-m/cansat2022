@@ -4,17 +4,17 @@
 
 #ifdef PULLUP
   #define Pressed  0
-  #define Rereased 1
+  #define Released 1
 #else
   #define Pressed  1
-  #define Rereased 0
+  #define Released 0
 #endif
 
 #define SW_Pin        3
 #define BaudRate 115200
 #define dataSize    128
 
-uint8_t SW_old, SW_new = 0;
+uint8_t SW_stat = Released * 0b11111111;
 uint8_t IMU_Datas[dataSize];
 
 void setup() {
@@ -24,14 +24,13 @@ void setup() {
 }
 
 void loop() {
-  IMU_Datas[0] = random(256);
   IMU_Data_Switch();
+  IMU_Datas[0] = random(128);  //仮でランダムデータを代入:
   show_All_IMU_Datas();
   delay(1000);
 /*
-  SW_old = SW_new;
-  SW_new = digitalRead(SW_Pin);
-  if(SW_old == Rereased && SW_new == Pressed){
+  SW_stat = SW_stat << 1 + digitalRead(SW_Pin);
+  if(SW_old == Released && SW_new == Pressed){
     //とりあえずパス:
   }
  */
