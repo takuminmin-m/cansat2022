@@ -1,6 +1,6 @@
 # テストコード
 
-[test_with_gps_device](./test/test_with_gps_device/test_with_gps_device.ino)
+[test_with_gps_device](./test_with_gps_device/test_with_gps_device.ino)
 
 ## ライブラリについて
 
