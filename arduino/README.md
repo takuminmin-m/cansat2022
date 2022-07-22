@@ -1,8 +1,8 @@
 # About
 
-- main
+- [main](./main)
   - 本番使用するコード
-- test
+- [test](./test)
   - 各種デバイスの動作確認用
 
 ## XBee設定を簡単にまとめてみる
